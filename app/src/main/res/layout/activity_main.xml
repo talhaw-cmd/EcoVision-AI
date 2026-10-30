@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0B1210"
+    android:padding="18dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="EcoVision AI"
+            android:textColor="#F3FFF7"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="● AI READY"
+            android:textColor="#65E6A1"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:background="#19372A"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="See the world through AI."
+        android:textColor="#91A79A"
+        android:textSize="14sp"
+        android:layout_marginBottom="18dp" />
+
+    <!-- Detection panel -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/bg_detection_panel"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="LIVE DETECTION"
+                android:textColor="#E8F5EC"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.08" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YOLOv8"
+                android:textColor="#65E6A1"
+                android:textSize="11sp"
+                android:background="#19372A"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#101A16">
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/cameraPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                app:scaleType="fitCenter" />
+
+            <com.example.ecovisionai.DetectionOverlay
+                android:id="@+id/detectionOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/txtEmptyState"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="24dp"
+                android:text="Your detection results will appear here&#10;&#10;Select an image or start the camera"
+                android:textColor="#91A79A"
+                android:textSize="14sp"
+                android:lineSpacingExtra="5dp" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OBJECT RECOGNITION"
+            android:textColor="#789184"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.12"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ready to scan"
+            android:textColor="#E8F5EC"
+            android:textSize="14sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="4dp" />
+
+    </LinearLayout>
+
+    <!-- Action buttons -->
+    <Button
+        android:id="@+id/btnGallery"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:text="Choose Image"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#092016"
+        android:backgroundTint="#65E6A1"
+        app:cornerRadius="14dp" />
+
+    <Button
+        android:id="@+id/btnCamera"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="9dp"
+        android:text="Start Live Camera"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        android:textColor="#E8F5EC"
+        android:backgroundTint="#20352A"
+        app:cornerRadius="14dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ON-DEVICE AI  •  YOUR IMAGES STAY ON YOUR DEVICE"
+        android:textColor="#61776A"
+        android:textSize="9sp"
+        android:gravity="center"
+        android:letterSpacing="0.06"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="4dp" />
+
+</LinearLayout>
